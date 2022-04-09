@@ -37,11 +37,11 @@ endsnippet
 snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
-public:
+  public:
 	${1/(\w+).*/$1/} (${2:arguments});
 	virtual ~${1/(\w+).*/$1/} ();
 
-private:
+  private:
 	${0:/* data */}
 };
 endsnippet
@@ -49,7 +49,9 @@ endsnippet
 snippet ns "namespace .. (namespace)"
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
 {
-	${VISUAL}$0
+
+${VISUAL}$0
+
 }${1/.+/ \/* /m}$1${1/.+/ *\//m}
 endsnippet
 
@@ -68,7 +70,7 @@ snippet map "std::map (map)"
 std::map<${1:key}, ${2:value}> map$0;
 endsnippet
 
-snippet vector "std::vector (v)"
+snippet vec "std::vector (v)"
 std::vector<${1:char}> v$0;
 endsnippet
 
